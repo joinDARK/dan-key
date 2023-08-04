@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="modalBackground">
+        <div class="modalActive">
+            <div class="modalClose">
+                <img src="img/cross.png"/>
+            </div>
+            <div class="modalWindow">
+                <div id="modalWindow-personHeader">
+                    <div class="person">
+                        <input type="text" id="perName" value="Безымянный персонаж">
+                        <div class="line"></div>
+                        <p>ИМЯ</p>
+                    </div>
+                    <div class="person">
+                        <input type="text" id="perSpecies" value="Раса">
+                        <div class="line"></div>
+                        <p>РАСА</p>
+                    </div>
+                    <div class="person">
+                        <input type="text" id="perClass" value="Класс">
+                        <div class="line"></div>
+                        <p>КЛАСС</p>
+                    </div>
+                </div>
+                <div id="modalWindow-menu">
+                    <button class="modalMenu" id="modalWindow_menu-stats">Характеристики</button>
+                    <button class="modalMenu" id="modalWindow_menu-skills">Навыки и владения</button>
+                    <button class="modalMenu" id="modalWindow_menu-inventory">Инвентарь</button>
+                    <button class="modalMenu" id="modalWindow_menu-relationships">Отношения</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div id="modalTrigger">
+            <p id="personName" class="modalTrigger">Безымянный персонаж</p>
+            <p id="personOther" class="modalTrigger">
+                <span id="personSpecies">Раса</span>
+                —
+                <span id="personClass">Класс</span>
+            </p>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-evenly;">
+            <div class="person-num__style">
+                <p class="text">ОЗ:</p>
+                <input type="number" class="person-num__style-num" id="personHealth" min="0" style="width: 78px;">
+            </div>
+            <div class="person-num__style">
+                <p class="text">КД:</p>
+                <input type="number" class="person-num__style-num" id="personArmor" min="0" style="width: 78px;">
+            </div>
+            <div class="person-num__style">
+                <p class="text">Родство:</p>
+                <input type="number" class="person-num__style-num" id="personMage" min="0" style="width: 33px;">
+            </div>
+            <div class="person-num__style">
+                <p class="text">Уровень:</p>
+                <input type="number" class="person-num__style-num" id="personLevel" min="0" style="width: 33px;">
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="char-stats">
+            <button class="menu">Характеристики</button>
+            <div id="STR" class="char-stats">
+                <div id="char-stats_main-STR" class="char-stats_main">
+                    <p>СИЛА</p>
+                    <div class="line"></div>
+                    <input type="number" min="-40" max="40" value="0" class="char-stats_num">
+                </div>
+                <div class="char-stats_MOD">
+                    <p class="text-mod">Атлетика:</p>
+                    <input type="number" class="char-sheet__num" min="-40" max="40" value="0">
+                </div>
+            </div>
+
+            <div id="DEX" class="char-stats">
+                <div id="char-stats_main-DEX" class="char-stats_main">
+                    <p>ЛОВКОСТЬ</p>
+                    <div class="line"></div>
+                    <input type="number" min="-40" max="40" value="0" class="char-stats_num">
+                </div>
+                <div class="char-stats_MOD">
+                    <p class="text-mod">Акробатика:</p>
+                    <input type="number" class="char-sheet__num" min="-40" max="40" value="0">
+                </div>
+                <div class="char-stats_MOD">
+                    <p class="text-mod">Ловкость рук:</p>
+                    <input type="number" class="char-sheet__num" min="-40" max="40" value="0">
+                </div>
+                <div class="char-stats_MOD">
+                    <p class="text-mod">Скрытность:</p>
+                    <input type="number" class="char-sheet__num" min="-40" max="40" value="0">
+                </div> 
+                <div class="char-stats_MOD">
+                    <p class="text-mod">Реакция:</p>
+                    <input type="number" class="char-sheet__num" min="-40" max="40" value="0">
+                </div>
+            </div>
+
+            <div id="CON" class="char-stats">
+                <div id="char-stats_main-CON" class="char-stats_main">
+                    <p>ТЕЛОСЛОЖЕНИЕ</p>
+                    <div class="line"></div>
+                    <input type="number" min="-40" max="40" value="0" class="char-stats_num">
+                </div>
+                <div class="char-stats_MOD">
+                    <p class="text-mod">Здоровье:</p>
+                    <input type="number" class="char-sheet__num" min="-40" max="40" value="0">
+                </div>
+                <div class="char-stats_MOD">
+                    <p class="text-mod">Прочность:</p>
+                    <input type="number" class="char-sheet__num" min="-40" max="40" value="0">
+                </div>
+                <div class="char-stats_MOD">
+                    <p class="text-mod">Выносливость:</p>
+                    <input type="number" class="char-sheet__num" min="-40" max="40" value="0">
+                </div>
+            </div>
+
+            <div id="SPI" class="char-stats">
+                <div id="char-stats_main-SPI" class="char-stats_main">
+                    <p>ДУХ</p>
+                    <div class="line"></div>
+                    <input type="number" min="-40" max="40" value="0" class="char-stats_num">
+                </div>
+                <div class="char-stats_MOD">
+                    <p class="text-mod">Воля:</p>
+                    <input type="number" class="char-sheet__num" min="-40" max="40" value="0">
+                </div>
+                <div class="char-stats_MOD">
+                    <p class="text-mod">Решимость:</p>
+                    <input type="number" class="char-sheet__num" min="-40" max="40" value="0">
+                </div>
+                <div class="char-stats_MOD">
+                    <p class="text-mod">Сила души:</p>
+                    <input type="number" class="char-sheet__num" min="-40" max="40" value="0">
+                </div>
+            </div>
+
+            <div id="INT" class="char-stats">
+                <div id="char-stats_main-INT" class="char-stats_main">
+                    <p>ИНТЕЛЛЕКТ</p>
+                    <div class="line"></div>
+                    <input type="number" min="-40" max="40" value="0" class="char-stats_num">
+                </div>
+                <div class="char-stats_MOD">
+                    <p class="text-mod">Магия:</p>
+                    <input type="number" class="char-sheet__num" min="-40" max="40" value="0">
+                </div>
+                <div class="char-stats_MOD">
+                    <p class="text-mod">Анализ:</p>
+                    <input type="number" class="char-sheet__num" min="-40" max="40" value="0">
+                </div>
+                <div class="char-stats_MOD">
+                    <p class="text-mod">История:</p>
+                    <input type="number" class="char-sheet__num" min="-40" max="40" value="0">
+                </div>
+                <div class="char-stats_MOD">
+                    <p class="text-mod">Природа:</p>
+                    <input type="number" class="char-sheet__num" min="-40" max="40" value="0">
+                </div>
+                <div class="char-stats_MOD">
+                    <p class="text-mod">Религия:</p>
+                    <input type="number" class="char-sheet__num" min="-40" max="40" value="0">
+                </div>
+                <div class="char-stats_MOD">
+                    <p class="text-mod">Стойкость разума:</p>
+                    <input type="number" class="char-sheet__num" min="-40" max="40" value="0">
+                </div>
+            </div>
+
+            <div id="WIS" class="char-stats">
+                <div id="char-stats_main-WIS" class="char-stats_main">
+                    <p>МУДРОСТЬ</p>
+                    <div class="line"></div>
+                    <input type="number" min="-40" max="40" value="0" class="char-stats_num">
+                </div>
+                <div class="char-stats_MOD">
+                    <p class="text-mod">Уход за животными:</p>
+                    <input type="number" class="char-sheet__num" min="-40" max="40" value="0">
+                </div>
+                <div class="char-stats_MOD">
+                    <p class="text-mod">Проницательность:</p>
+                    <input type="number" class="char-sheet__num" min="-40" max="40" value="0">
+                </div>
+                <div class="char-stats_MOD">
+                    <p class="text-mod">Медицина:</p>
+                    <input type="number" class="char-sheet__num" min="-40" max="40" value="0">
+                </div>
+                <div class="char-stats_MOD">
+                    <p class="text-mod">Внимательность:</p>
+                    <input type="number" class="char-sheet__num" min="-40" max="40" value="0">
+                </div>
+                <div class="char-stats_MOD">
+                    <p class="text-mod">Выживание:</p>
+                    <input type="number" class="char-sheet__num" min="-40" max="40" value="0">
+                </div>
+            </div>
+
+            <div id="CHA" class="char-stats">
+                <div id="char-stats_main-CHA" class="char-stats_main">
+                    <p>ХАРИЗМА</p>
+                    <div class="line"></div>
+                    <input type="number" min="-40" max="40" value="0" class="char-stats_num">
+                </div>
+                <div class="char-stats_MOD">
+                    <p class="text-mod">Обман:</p>
+                    <input type="number" class="char-sheet__num" min="-40" max="40" value="0">
+                </div>
+                <div class="char-stats_MOD">
+                    <p class="text-mod">Запугивание:</p>
+                    <input type="number" class="char-sheet__num" min="-40" max="40" value="0">
+                </div>
+                <div class="char-stats_MOD">
+                    <p class="text-mod">Выступление:</p>
+                    <input type="number" class="char-sheet__num" min="-40" max="40" value="0">
+                </div>
+                <div class="char-stats_MOD">
+                    <p class="text-mod">Убеждение:</p>
+                    <input type="number" class="char-sheet__num" min="-40" max="40" value="0">
+                </div>
+            </div>
+        </div>
+        <div id="char-skills">
+            <button class="menu">Навыки и владения</button>
+            <div>
+                <p class="textTitle">Навыки</p>
+                <textarea class="textarea" id="skills"></textarea>
+            </div>
+            <div>
+                <p class="textTitle">Владения</p>
+                <textarea class="textarea" id="property"></textarea>
+            </div>
+        </div>
+        <div id="char-inventory">
+            <button class="menu">Инвентарь</button>
+            <div>
+                <p class="textTitle">Инвентарь</p>
+                <textarea class="textarea" id="inventory"></textarea>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+                <div class="char-inventory_money">
+                    <p class="textTitle">БМ:</p>
+                    <input type="number" class="char-inventory_money-num">
+                </div>
+                <div class="char-inventory_money">
+                    <p class="textTitle">СМ:</p>
+                    <input type="number" class="char-inventory_money-num">
+                </div>
+                <div class="char-inventory_money">
+                    <p class="textTitle">ЗМ:</p>
+                    <input type="number" class="char-inventory_money-num">
+                </div>
+                <div class="char-inventory_money">
+                    <p class="textTitle">ПМ:</p>
+                    <input type="number" class="char-inventory_money-num">
+                </div>
+                <div class="char-inventory_money">
+                    <p class="textTitle">МЭ:</p>
+                    <input type="number" class="char-inventory_money-num">
+                </div>
+            </div>
+        </div>
+        <div id="char-relationships">
+            <button class="menu">Отношения</button>
+            <div>
+                <p class="textTitle">Отношения</p>
+                <textarea class="textarea" id="relationships"></textarea>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
